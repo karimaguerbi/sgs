@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}اضافة نقابة جديدة{% endblock %}
+
+{% block body %}
+    <h1>  اضافة نقابة جديدة</h1>
+<hr>
+    {{ include('syndicat/_form.html.twig') }}
+
+    <a href="{{ path('syndicat_index') }}">عودة الى القائمة</a>
+{% endblock %}

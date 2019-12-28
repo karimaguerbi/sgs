@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('syndicat_delete', {'id': syndicat.id}) }}" onsubmit="return confirm('هل أنت متأكد من حذف المعطيات');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ syndicat.id) }}">
+    <button class="btn btn-danger float-right" style="margin-right:20px;">حذف</button>
+</form>

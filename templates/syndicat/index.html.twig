@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} قائمة النقابات{% endblock %}
+
+{% block body %}
+    <h1>قائمة النقابات</h1>
+	<hr>
+<a href="{{ path('syndicat_new') }}">اضافة نقابة جديدة</a>
+    <table class="table ">
+        <thead>
+            <tr>
+                
+                <th>اسم النقابة</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for syndicat in syndicats %}
+            <tr>
+                
+                <td>
+                    {{ syndicat.name }}
+					</td>
+                <td>
+                    <a href="{{ path('syndicat_edit', {'id': syndicat.id}) }}">تعديل</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">لا يوجد معطيات</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
